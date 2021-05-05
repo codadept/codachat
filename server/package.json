@@ -9,6 +9,6 @@
   "author": "Pratik Majumdar (codadept)",
   "license": "MIT",
   "dependencies": {
-    "socket.io": "^4.0.1"
+    "socket.io": "^2.4.1"
   }
 }
