@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400&display=swap" rel="stylesheet">
+    <title>codachat | By codadept</title>
+    <link rel="icon" href="./img/codachat.png" type="image/x-icon">
+</head>
+<body>
+    <div class="bodybg"></div>
+
+    <div class="container">
+        <div class="online-users">
+            <div class="user">
+                <div class="user-details">
+                    <h3 id="name">Pratik</h3>
+                    <h6 id="status">online</h6>
+                </div>
+                <div class="user-img male"></div>
+            </div>
+            <div class="user">
+                <div class="user-details">
+                    <h3 id="name">Anushka</h3>
+                    <h6 id="status">offline</h6>
+                </div>
+                <div class="user-img female"></div>
+            </div>
+        </div>
+        <div class="live-chat">
+            <div class="message-section">
+                <div class="message left">
+                    <h6 id="user-name">Pratik</h6>
+                    <p id="user-message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, totam!</p>
+                    <span id='time'>00:15</span>
+                </div>
+                <div class="message right">
+                    <h6 id="user-name">Anushka</h6>
+                    <p id="user-message">Lorem ipsum dolor sit amet Aspernatur, totam!</p>
+                    <span id='time'>00:18</span>
+                </div>
+            </div>
+            <div class="message-input-section">
+                <form id="input-form">
+                    <input type="text" id="message-input">
+                    <button class="message-send" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
