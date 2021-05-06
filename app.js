@@ -5,6 +5,8 @@ const messageInput = document.querySelector("#message-input");
 const messageContainer = document.querySelector(".message-section");
 const onlineUsers = document.querySelector(".online-users");
 
+var audio = new Audio("./media/notification.mp3");
+
 const appendMessage = (name,message,time,position) =>{
     const messageElement = document.createElement("div");
     messageElement.classList.add("message");
@@ -22,11 +24,18 @@ const appendMessage = (name,message,time,position) =>{
     messageElement.append(messageBody);
     messageElement.append(timeBody);
     messageContainer.append(messageElement);
+    if(position=="left"){
+        audio.play()
+        .catch(()=>{
+            console.log("Can't play");
+        })
+    }
 }
 
-const userJoined = (name,gender)=>{
+const userJoined = (name,gender,userId)=>{
     const userContainer = document.createElement("div");
     userContainer.classList.add("user");
+    userContainer.setAttribute("id",userId);
     const userDetails = document.createElement("div");
     userDetails.classList.add("user-details");
     const userName = document.createElement("h3");
@@ -47,7 +56,22 @@ const userJoined = (name,gender)=>{
     userContainer.append(userDetails);
     userContainer.append(userImg);
     onlineUsers.append(userContainer);
-    console.log("New user joined")
+}
+
+const userLeft = (userId)=>{
+    const leftUser = document.querySelector(`#${userId}`);
+    leftUser.firstChild.lastChild.textContent = "offline";
+    setTimeout(()=>{
+        leftUser.remove();
+    },10000);
+}
+
+const checkUser = (userId)=>{
+    if(document.getElementById(`${userId}`)){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 form.addEventListener("submit",(e)=>{
@@ -56,21 +80,21 @@ form.addEventListener("submit",(e)=>{
     var current = new Date();
     var currentTime = current.toLocaleTimeString();
     appendMessage("You",message,currentTime,'right');
-    socket.emit("send",message)
+    socket.emit("send",{message,gender})
     messageInput.value = "";
 })
 
 const nameInput = prompt("Enter your name to join the live chat: ");
 const gender = prompt("What is your gender(M for Male and F for Female): ");
 
-userJoined(nameInput,gender);
+userJoined(nameInput,gender,"self");
 
 socket.emit("new-user-joined",{nameInput,gender});
 
 socket.on("user-joined", (data)=>{
     var current = new Date();
     var currentTime = current.toLocaleTimeString();
-    userJoined(data.nameInput,data.gender);
+    userJoined(data.nameInput,data.gender,data.userId);
     appendMessage(data.nameInput,"Joined the live chat",currentTime,"left");
 })
 
@@ -78,10 +102,14 @@ socket.on("receive",data=>{
     var current = new Date();
     var currentTime = current.toLocaleTimeString();
     appendMessage(data.name,data.message,currentTime,"left")
+    if(!checkUser(data.userId)){
+        userJoined(data.name,data.gender,data.userId)
+    }
 })
 
-socket.on("left",name=>{
+socket.on("left",(data)=>{
     var current = new Date();
     var currentTime = current.toLocaleTimeString();
-    appendMessage(name,"Left the live chat :(",currentTime,"left")
+    appendMessage(data.name,"Left the live chat :(",currentTime,"left")
+    userLeft(data.userId);
 })
