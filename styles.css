@@ -10,7 +10,7 @@ body{
 }
 
 .bodybg{
-    background-image: url("/img/bodybg.jpg");
+    background-image: url("./img/bodybg.jpg");
     background-size: contain;
     filter: blur(8px);
     width: 100%;
@@ -159,7 +159,7 @@ body{
     border: none;
     margin-left: 10px;
     background-color: white;
-    background-image: url("/img/send.png");
+    background-image: url("./img/send.png");
     background-size: 35px;
     background-repeat: no-repeat;
     background-position: 70% 50%;
@@ -217,5 +217,11 @@ body{
     }
     .container{
         padding:15px;
+    }
+}
+
+@media(max-width:450px){
+    #message-input{
+        width: 50%;
     }
 }
