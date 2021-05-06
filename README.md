@@ -187,10 +187,10 @@ $ git push origin your-branch-name
 
 If you go to your repository on GitHub, you'll see a `Compare & pull request` button. Click on that button.
 
-<img style="float:right;" width="300" src="https://github.com/codadept/codachat/blob/master/resources/c3.png" alt="create a pull request" />
+<img style="float:right;" src="https://github.com/codadept/codachat/blob/master/resources/c3.png" alt="create a pull request" />
 
 Now submit the pull request.
 
-<img style="float: right;" src="https://github.com/codadept/codachat/blob/master/resources/c3.png" alt="send pull request" />" alt="submit pull request" />
+<img style="float: right;" src="https://github.com/codadept/codachat/blob/master/resources/c3.png" alt="send pull request" />
 
 Soon I'll review your code and merge your changes. So you will be considered as a contributor!
