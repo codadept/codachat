@@ -58,17 +58,6 @@ h4 {
   color: black;
 }
 
-input {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  font-family: 'Cormorant', serif;
-  color: white;
-  font-size: 20px;
-  margin-top: 15px;
-}
-
 .container1 {
   background-image: url(img/back-img3.jpg);
   background-repeat: no-repeat;
@@ -113,6 +102,17 @@ input {
 .textbox {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.input-info {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Cormorant', serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
 }
 .info-container {
   position: relative;
