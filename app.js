@@ -84,26 +84,33 @@ form.addEventListener("submit",(e)=>{
     messageInput.value = "";
 })
 
-// const nameInput = prompt("Enter your name to join the live chat: ");
-// const gender = prompt("What is your gender(M for Male and F for Female): ");
-
 
 function fn1() {
-  
+  const nameInput= document.getElementById("username").value;
+  const gender= document.getElementById("gender").value;
+
+  if(nameInput != "" && gender != "")
+  {
+    var a= document.querySelector(".container1");
+    a.style.display="none";
+    var b= document.querySelector(".container2");
+    b.style.display="block";
+
+    userJoined(nameInput,gender,"self");
+
+    socket.emit("new-user-joined",{nameInput,gender});
+
+    socket.on("user-joined", (data)=>{
+        var current = new Date();
+        var currentTime = current.toLocaleTimeString();
+        userJoined(data.nameInput,data.gender,data.userId);
+        appendMessage(data.nameInput,"Joined the live chat",currentTime,"left");
+    })
+  }
+
+
 }
 
-
-
-userJoined(nameInput,gender,"self");
-
-socket.emit("new-user-joined",{nameInput,gender});
-
-socket.on("user-joined", (data)=>{
-    var current = new Date();
-    var currentTime = current.toLocaleTimeString();
-    userJoined(data.nameInput,data.gender,data.userId);
-    appendMessage(data.nameInput,"Joined the live chat",currentTime,"left");
-})
 
 socket.on("receive",data=>{
     var current = new Date();
