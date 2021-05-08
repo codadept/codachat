@@ -59,7 +59,7 @@ h4 {
 }
 
 .container1 {
-  background-image: url(img/back-img3.jpg);
+  background-image: url(img/back-img6.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -74,7 +74,7 @@ h4 {
   background: rgba(255, 255 , 255, 0.1);
   border-top: 1px solid rgba(255, 255 , 255, 0.5);
   border-left: 1px solid rgba(255, 255 , 255, 0.5);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(4px);
   padding: 30px 110px 60px 60px;
 }
 
