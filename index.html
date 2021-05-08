@@ -1,46 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400&display=swap" rel="stylesheet">
-    <title>codachat | By codadept</title>
-    <link rel="icon" href="./img/codachat.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Dancing+Script:wght@600;700&family=Lobster&family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400&display=swap" rel="stylesheet">
+  <title>codachat | By codadept</title>
+  <link rel="icon" href="./img/codachat.png" type="image/x-icon">
 </head>
+
 <body>
+
+  <div class="container1">
+    <div class="wrapper">
+
+      <h1>Login</h1>
+
+      <div class="textbox">
+        <div class="info-container">
+          <i class="fas fa-user"></i>
+          <div class="info name">
+            <input type="text" placeholder="Name" name="" value="" id="username">
+          </div>
+        </div>
+        <div class="info-container">
+          <i class="fas fa-venus-mars"></i>
+          <div class="info gender">
+            <input type="text" placeholder="Gender" name="" value="" id="gender">
+          </div>
+        </div>
+      </div>
+
+      <div class="button" >
+        <a class="btn" href="#" onclick="fn1()">Let's Go</a>
+      </div>
+
+      <!-- <script>
+
+        function fn1() {
+          var a= document.getElementById("username").value;
+          var b= document.getElementById("gender").value;
+          console.log(a);
+          return a, b;
+        }
+
+
+      </script> -->
+
+    </div>
+  </div>
+
+  <div class="container2">
     <div class="bodybg"></div>
 
     <header>
-        <nav>
-            <h1><a href="https://codadept.github.io/codachat">codachat</a></h1>
-            <img src="./img/codachat.png" alt="codachat">
-        </nav>
+      <nav>
+        <h1><a href="https://codadept.github.io/codachat">codachat</a></h1>
+        <img src="./img/codachat.png" alt="codachat">
+      </nav>
     </header>
 
     <div class="container">
-        <div class="online-users">
+      <div class="online-users">
+      </div>
+      <div class="live-chat">
+        <div class="message-section">
         </div>
-        <div class="live-chat">
-            <div class="message-section">  
-            </div>
-            <div class="message-input-section">
-                <form id="input-form">
-                    <input placeholder="Send a message" type="text" id="message-input">
-                    <button class="message-send" type="submit"></button>
-                </form>
-            </div>
+        <div class="message-input-section">
+          <form id="input-form">
+            <input placeholder="Send a message" type="text" id="message-input">
+            <button class="message-send" type="submit"></button>
+          </form>
         </div>
+      </div>
     </div>
 
     <footer>
-        <h3>&#169; 2021 Pratik Majumdar(codadept)</h3>
-        <h4><a href="https://github.com/codadept/codachat">Checkout the Project</a></h4>
+      <h3>&#169; 2021 Pratik Majumdar(codadept)</h3>
+      <h4><a href="https://github.com/codadept/codachat">Checkout the Project</a></h4>
     </footer>
+  </div>
 
-    <script src="https://codachat-server.herokuapp.com/socket.io/socket.io.js"></script>
-    <script src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/b348e6a2da.js" crossorigin="anonymous"></script>
+  <script src="https://codachat-server.herokuapp.com/socket.io/socket.io.js"></script>
+  <script src="./app.js"></script>
 </body>
+
 </html>

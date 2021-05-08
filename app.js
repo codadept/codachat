@@ -84,8 +84,15 @@ form.addEventListener("submit",(e)=>{
     messageInput.value = "";
 })
 
-const nameInput = prompt("Enter your name to join the live chat: ");
-const gender = prompt("What is your gender(M for Male and F for Female): ");
+// const nameInput = prompt("Enter your name to join the live chat: ");
+// const gender = prompt("What is your gender(M for Male and F for Female): ");
+
+
+function fn1() {
+  
+}
+
+
 
 userJoined(nameInput,gender,"self");
 
